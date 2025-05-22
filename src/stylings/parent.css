@@ -1,0 +1,10 @@
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 2rem;
+  padding-left: 4rem;
+  overflow-x: hidden;
+}

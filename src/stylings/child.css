@@ -1,0 +1,81 @@
+.card {
+  background-color: rgba(80, 82, 82, 0.18);
+  width: 300px;
+  height: 460px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.611);
+  overflow: hidden;
+}
+.card .pic-div-contain {
+  background-color: rgb(244, 131, 154);
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.card .pic-div-contain .pic {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  margin-top: 20px;
+  overflow: hidden;
+  background-color: white;
+  position: absolute;
+  top: 25px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.595);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .pic img {
+  width: 100%;
+  object-fit: cover;
+  z-index: 30;
+}
+.card .content {
+  padding: 0.5rem;
+  width: 100%;
+  margin-top: 60px;
+  text-align: center;
+}
+.content h2 {
+  font-family: cursive;
+  font-size: 33px;
+  white-space: nowrap;
+}
+.content #age {
+  font-size: 24px;
+  margin-block: 10px;
+  font-family: sans-serif;
+  white-space: nowrap;
+}
+.sur {
+  margin-top: 20px;
+  font-size: 24px;
+  white-space: nowrap;
+}
+.content .btn-container {
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn-container button {
+  width: 48%;
+  height: 60px;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  background-color: royalblue;
+  color: white;
+  font-weight: 600;
+  transition: all 0.2s;
+  &:hover {
+    box-shadow: 0 0 6px rgba(192, 4, 209, 0.707);
+  }
+}
