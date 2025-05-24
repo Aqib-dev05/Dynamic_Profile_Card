@@ -70,6 +70,7 @@ export default function CardParent() {
 
       {dataToShow.map((currData, idx) => {
         return <Card key={idx} data={currData} />;
+        
       })}
     </div>
   );
