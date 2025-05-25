@@ -1,7 +1,7 @@
 import Card from "./Card.jsx";
 import "../stylings/parent.css";
 import Add from "./AddCard.jsx";
-import { useState,useEffect} from "react";
+import { useState, useEffect } from "react";
 
 export default function CardParent() {
   const [dataToShow, setDataToShow] = useState([]);
@@ -21,7 +21,7 @@ export default function CardParent() {
   }
   // Load data from localStorage when component mounts
   useState(() => {
-    const savedData = localStorage.getItem('cardData');
+    const savedData = localStorage.getItem("cardData");
     if (savedData) {
       setDataToShow(JSON.parse(savedData));
     }
@@ -29,7 +29,7 @@ export default function CardParent() {
 
   // Save data to localStorage whenever dataToShow changes
   useEffect(() => {
-    localStorage.setItem('cardData', JSON.stringify(dataToShow));
+    localStorage.setItem("cardData", JSON.stringify(dataToShow));
   }, [dataToShow]);
   function setform(e) {
     setformData({
@@ -37,7 +37,7 @@ export default function CardParent() {
       [e.target.name]: e.target.value,
     });
   }
-  
+
   function setFormImage(e) {
     const file = e.target.files[0];
     const reader = new FileReader();
@@ -50,10 +50,12 @@ export default function CardParent() {
   }
   function handleForm(e) {
     e.preventDefault();
-    setformData({Fname: "John Doe",
-    age: "24",
-    Skills: "Programmer",
-    image: "",});
+    setformData({
+      Fname: "John Doe",
+      age: "24",
+      Skills: "Programmer",
+      image: "",
+    });
 
     const isDuplicate = dataToShow.some(
       (item) =>
@@ -81,7 +83,6 @@ export default function CardParent() {
 
       {dataToShow.map((currData, idx) => {
         return <Card key={idx} data={currData} />;
-        
       })}
     </div>
   );
