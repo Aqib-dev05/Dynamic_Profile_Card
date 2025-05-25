@@ -4,6 +4,7 @@ import Add from "./AddCard.jsx";
 import { useState, useEffect } from "react";
 
 export default function CardParent() {
+  const [show, setShow] = useState(false);
   const [dataToShow, setDataToShow] = useState([]);
   const [formData, setformData] = useState({
     Fname: "John Doe",
@@ -11,7 +12,6 @@ export default function CardParent() {
     Skills: "Programmer",
     image: "",
   });
-  const [show, setShow] = useState(false);
 
   function openForm() {
     setShow(true);
