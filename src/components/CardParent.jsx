@@ -50,11 +50,13 @@ export default function CardParent() {
   }
   function handleForm(e) {
     e.preventDefault();
+    const defaultImage = "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3";
+    
     setformData({
       Fname: "John Doe",
       age: "24",
       Skills: "Programmer",
-      image: "",
+      image: formData.image || defaultImage,
     });
 
     const isDuplicate = dataToShow.some(
