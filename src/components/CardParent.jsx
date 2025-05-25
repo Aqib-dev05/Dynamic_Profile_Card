@@ -1,7 +1,7 @@
 import Card from "./Card.jsx";
 import "../stylings/parent.css";
 import Add from "./AddCard.jsx";
-import { useState } from "react";
+import { useState,useEffect} from "react";
 
 export default function CardParent() {
   const [dataToShow, setDataToShow] = useState([]);
@@ -19,7 +19,18 @@ export default function CardParent() {
   function closeForm() {
     setShow(false);
   }
+  // Load data from localStorage when component mounts
+  useState(() => {
+    const savedData = localStorage.getItem('cardData');
+    if (savedData) {
+      setDataToShow(JSON.parse(savedData));
+    }
+  }, []);
 
+  // Save data to localStorage whenever dataToShow changes
+  useEffect(() => {
+    localStorage.setItem('cardData', JSON.stringify(dataToShow));
+  }, [dataToShow]);
   function setform(e) {
     setformData({
       ...formData,
